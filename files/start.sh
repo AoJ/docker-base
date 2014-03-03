@@ -14,6 +14,6 @@ if [ "$(ls -A $RUN_DIR)" ]; then
   done
 fi
 
-/usr/bin/supervisord >> $LOG &
+tail -f $LOG &
 
-tail -f $LOG
+/usr/bin/supervisord
