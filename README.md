@@ -19,7 +19,7 @@ docker base image for my usage
 
     
 ## TODO
-- change FROM to https://github.com/AoJ/docker-base.git
+- change FROM to https://github.com/pblittle/docker-base
 
 
 ## Changelog
