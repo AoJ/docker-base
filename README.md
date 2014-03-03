@@ -23,8 +23,8 @@ docker base image for my usage
 
 
 ## Changelog
-1.4 remove make, gcc
-1.3 supervisor listen to SIG*
-1.2 remove gists dependencies
-1.1 minor fixies
-1.0 first realese
+- 1.4 remove make, gcc
+- 1.3 supervisor listen to SIG*
+- 1.2 remove gists dependencies
+- 1.1 minor fixies
+- 1.0 first realese
