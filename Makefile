@@ -8,7 +8,7 @@
 
 
 NAME=aooj/base
-VERSION=1.4
+VERSION=1.5
 
 
 build:
@@ -21,6 +21,16 @@ run:
 debug: build
 	docker run -p 22 -t -i $(NAME):$(VERSION) /bin/bash	
 
+tag:
+	docker tag $(NAME):$(VERSION) $(NAME):$(VERSION)
+	docker tag $(NAME):$(VERSION) $(NAME):latest
+
+release: tag
+	@if ! docker images aooj/base | awk '{ print $$2 }' | grep -q -F $(VERSION); then echo "$(NAME):$(VERSION) is not yet built. Run 'make build'"; false; fi
+	docker push $(NAME)
+	@echo "Now create a tag in repository. git tag $(VERSION)"
+
+
 ssh:
 	@ID=$$(docker ps | grep -F "$(NAME):$(VERSION)" | awk '{ print $$1 }') && \
 		if test "$$ID" = ""; then echo "Container is not running."; exit 1; fi && \
@@ -28,4 +38,4 @@ ssh:
 		echo "SSHing into $$IP" && \
 		ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@localhost
 
-.PHONY: build run debug ssh
+.PHONY: build run debug ssh tag

@@ -1,6 +1,6 @@
 # Docker base image
 #
-# VERSION 1.4
+# VERSION 1.5
 
 FROM ubuntu:12.04
 MAINTAINER AooJ <aoj@n13.cz>
@@ -36,7 +36,7 @@ RUN locale-gen en_US
 # ssh
 RUN mkdir /var/run/sshd
 RUN mkdir -p /root/.ssh
-ADD files/key.pub root/.ssh/authorized_keys
+RUN touch root/.ssh/authorized_keys
 RUN chown root:root root/.ssh/authorized_keys
 RUN dpkg-reconfigure openssh-server
 
