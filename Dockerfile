@@ -1,6 +1,6 @@
 # Docker base image
 #
-# VERSION 1.3
+# VERSION 1.4
 
 FROM ubuntu:12.04
 MAINTAINER AooJ <aoj@n13.cz>
@@ -26,7 +26,7 @@ RUN apt-get upgrade -y --no-install-recommends
 
 # install packages
 RUN apt-get install -y --no-install-recommends apt-transport-https
-RUN apt-get install -y --no-install-recommends net-tools nano wget curl make gcc openssh-server python-software-properties supervisor && apt-get clean
+RUN apt-get install -y --no-install-recommends net-tools nano wget curl openssh-server python-software-properties supervisor && apt-get clean
 
 # Fix locale.
 RUN apt-get install -y --no-install-recommends language-pack-en
