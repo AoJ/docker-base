@@ -2,10 +2,47 @@
 
 docker base image for my usage
 
+
 ## Usage
 
-### in Dockerfile
     FROM aooj/base:latest
+
+install your own service
+
+    RUN apt-get install -y redis
+    
+add some install script
+
+    ADD files/my.sh /opt/run/my.sh
+    
+add config for supervisord
+
+    ADD files/my.conf /etc/supervisor/conf.d/my.conf
+
+expose it
+
+    EXPOSE 6379
+
+
+### install script should look like
+
+    #!/usr/bin/env bash
+    
+    TOUCH /var/tmp/foo
+    echo "bar" >> /var/tmp/foo
+    
+- install scripts must exit=0
+- all stdout is logged to logfile in /var/log/start and docker logs
+
+
+### supervisord script should look like
+
+    [program:sshd]
+    command=/usr/my_program
+    
+
+## Develop
+
 
 ### build
     git clone https://github.com/AoJ/docker-base.git
