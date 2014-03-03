@@ -3,6 +3,10 @@
 docker base image for my usage
 
 ## Usage
+
+### in Dockerfile
+    FROM aooj/base:latest
+
 ### build
     git clone https://github.com/AoJ/docker-base.git
     make build
