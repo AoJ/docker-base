@@ -23,8 +23,9 @@ docker base image for my usage
 
     
 ## TODO
-- change FROM to https://github.com/AoJ/docker-base.git
+- change FROM to https://github.com/phusion/baseimage-docker
 - make tests
+
 
 ## Changelog
 - 1.5 remove my public key in ssh
