@@ -40,6 +40,8 @@ expose it
     [program:sshd]
     command=/usr/my_program
     
+### examples
+see example in https://github.com/AoJ/docker-redis
 
 ## Develop
 
