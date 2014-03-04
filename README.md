@@ -2,6 +2,13 @@
 
 docker base image for my usage
 
+- contains nano, wget, curl, top, ssh, supervisord
+- easy to use (see https://github.com/AoJ/docker-redis/blob/master/Dockerfile)
+- autostart, autorestart and logging service crashes, see /var/log/supervisor in container
+- easy logging with ssh - load your public key to /root/.ssh/authorized_keys
+- easy to run more service with supervisord
+- easy to use own bash install script
+
 
 ## Usage
 
@@ -13,11 +20,11 @@ install your own service
     
 add some install script
 
-    ADD files/my.sh /opt/run/my.sh
+    ADD files/redis_install.sh /opt/run/redis_install.sh
     
 add config for supervisord
 
-    ADD files/my.conf /etc/supervisor/conf.d/my.conf
+    ADD files/redis.conf /etc/supervisor/conf.d/redis.conf
 
 expose it
 
@@ -57,13 +64,17 @@ see example in https://github.com/AoJ/docker-redis
     make debug
 
 ## Tips
-- set your own ssh key to container. In Dockerfile fill authorized_keys like this:
+- set your own ssh key to container. In Dockerfile fill authorized_keys like this
+ 
     ADD my_rsa_pub root/.ssh/authorized_keys
 
     
 ## TODO
 - change FROM to https://github.com/phusion/baseimage-docker
 - make tests
+- set rc policy
+- optimize container size
+- flat container images
 
 
 ## Changelog
