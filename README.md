@@ -6,7 +6,7 @@ docker base image for my usage
 - easy to use (see https://github.com/AoJ/docker-redis/blob/master/Dockerfile)
 - autostart, autorestart and logging service crashes, see /var/log/supervisor in container
 - easy logging with ssh - load your public key to /root/.ssh/authorized_keys
-- easy to run more service with supervisord
+- easy to run more services with supervisord
 - easy to use own bash install script
 
 
