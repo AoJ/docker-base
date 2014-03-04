@@ -64,7 +64,7 @@ see example in https://github.com/AoJ/docker-redis
     make debug
 
 ## Tips
-- set your own ssh key to container. In Dockerfile fill authorized_keys like this
+- set your own ssh key to container. In Dockerfile fill authorized_keys like
  
     ADD my_rsa_pub root/.ssh/authorized_keys
 
