@@ -78,6 +78,7 @@ see example in https://github.com/AoJ/docker-redis
 
 
 ## Changelog
+- 1.6 stdout from install scripts send to dockers logs
 - 1.5 remove my public key in ssh
 - 1.4 remove make, gcc
 - 1.3 supervisor listen to SIG*
