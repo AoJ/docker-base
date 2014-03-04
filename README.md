@@ -44,8 +44,8 @@ expose it
 
 ### supervisord script should look like
 
-    [program:sshd]
-    command=/usr/my_program
+    [program:redis]
+    command=/usr/bin/redis
     
 ### examples
 see example in https://github.com/AoJ/docker-redis
