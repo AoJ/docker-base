@@ -11,7 +11,7 @@ install your own service
 
     RUN apt-get install -y redis
     
-add some install script
+add some install script. Install scripts are fired for first start
 
     ADD files/my.sh /opt/run/my.sh
     
@@ -67,6 +67,7 @@ see example in https://github.com/AoJ/docker-redis
 
 
 ## Changelog
+- 1.7 refactor install scripts
 - 1.5 remove my public key in ssh
 - 1.4 remove make, gcc
 - 1.3 supervisor listen to SIG*

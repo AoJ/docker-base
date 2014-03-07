@@ -8,7 +8,7 @@
 
 
 NAME=aooj/base
-VERSION=1.6
+VERSION=1.7
 
 
 build:
@@ -24,11 +24,6 @@ debug: build
 tag:
 	docker tag $(NAME):$(VERSION) $(NAME):$(VERSION)
 	docker tag $(NAME):$(VERSION) $(NAME):latest
-
-release: tag
-	@if ! docker images aooj/base | awk '{ print $$2 }' | grep -q -F $(VERSION); then echo "$(NAME):$(VERSION) is not yet built. Run 'make build'"; false; fi
-	docker push $(NAME)
-	@echo "Now create a tag in repository. git tag $(VERSION)"
 
 
 ssh:

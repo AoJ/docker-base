@@ -1,6 +1,6 @@
 # Docker base image
 #
-# VERSION 1.6
+# VERSION 1.7
 
 FROM ubuntu:12.04
 MAINTAINER AooJ <aoj@n13.cz>
@@ -43,9 +43,10 @@ RUN dpkg-reconfigure openssh-server
 # supervisor
 ADD files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# start
+# start & install
+ADD files/ /opt/
 RUN mkdir -p /opt/run
-ADD files/start.sh /opt/start.sh
+RUN chmod +x /opt/install.sh
 RUN chmod +x /opt/start.sh
 
 CMD ["/opt/start.sh"]
