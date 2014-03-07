@@ -22,9 +22,10 @@ debug: build
 	docker run -p 22 -t -i $(NAME):$(VERSION) /bin/bash	
 
 tag:
-	docker tag $(NAME):$(VERSION) $(NAME):$(VERSION)
-	docker tag $(NAME):$(VERSION) $(NAME):latest
-
+	git tag -d $(VERSION) 2>&1 > /dev/null
+	git tag -d latest 2>&1 > /dev/null
+	git tag $(VERSION)
+	git tag latest
 
 ssh:
 	@ID=$$(docker ps | grep -F "$(NAME):$(VERSION)" | awk '{ print $$1 }') && \
