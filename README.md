@@ -78,6 +78,7 @@ see example in https://github.com/AoJ/docker-redis
 
 
 ## Changelog
+- 1.8 update && join docker layers
 - 1.7 refactor install scripts
 - 1.6 stdout from install scripts send to dockers logs
 - 1.5 remove my public key in ssh

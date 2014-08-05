@@ -8,7 +8,7 @@
 
 
 NAME=aooj/base
-VERSION=1.7
+VERSION=1.8
 
 
 build:
@@ -16,10 +16,10 @@ build:
 
 
 run:
-	docker run -p 22 -t -i $(NAME):$(VERSION)
+	docker run -p 22 --rm -t -i $(NAME):$(VERSION)
 
 debug: build
-	docker run -p 22 -t -i $(NAME):$(VERSION) /bin/bash	
+	docker run -p 22 --rm -t -i $(NAME):$(VERSION) /bin/bash	
 
 tag:
 	git tag -d $(VERSION) 2>&1 > /dev/null

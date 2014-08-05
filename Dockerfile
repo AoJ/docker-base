@@ -1,6 +1,6 @@
 # Docker base image
 #
-# VERSION 1.7
+# VERSION 1.8
 
 FROM ubuntu:12.04
 MAINTAINER AooJ <aoj@n13.cz>
@@ -12,36 +12,19 @@ ENV HOME /root
 
 # enable universe
 RUN sed 's/main$/main universe/' -i /etc/apt/sources.list
-RUN apt-get update
 
-
-# Fix some issues with APT packages.
-# See https://github.com/dotcloud/docker/issues/1024
-RUN dpkg-divert --local --rename --add /sbin/initctl
-RUN ln -sf /bin/true /sbin/initctl
-
-# Upgrade all packages.
-RUN echo "initscripts hold" | dpkg --set-selections
-RUN apt-get upgrade -y --no-install-recommends
-
-# install packages
-RUN apt-get install -y --no-install-recommends apt-transport-https
-RUN apt-get install -y --no-install-recommends net-tools nano wget curl openssh-server python-software-properties supervisor && apt-get clean
-
-# Fix locale.
-RUN apt-get install -y --no-install-recommends language-pack-en
-RUN locale-gen en_US
-
-
-# ssh
-RUN mkdir /var/run/sshd
-RUN mkdir -p /root/.ssh
-RUN touch root/.ssh/authorized_keys
-RUN chown root:root root/.ssh/authorized_keys
-RUN dpkg-reconfigure openssh-server
+# copy files
+ADD install /tmp/install
+RUN chmod +x /tmp/install/*
+RUN /tmp/install/dependencies.sh
+RUN /tmp/install/prepare.sh
+RUN rm /tmp/install -rf
 
 # supervisor
 ADD files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# screen
+ADD files/screenrc /root/.screenrc
 
 # start & install
 ADD files/ /opt/
@@ -50,5 +33,3 @@ RUN chmod +x /opt/install.sh
 RUN chmod +x /opt/start.sh
 
 CMD ["/opt/start.sh"]
-	
-
