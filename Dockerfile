@@ -1,8 +1,8 @@
 # Docker base image
 #
-# VERSION 1.8
+# VERSION 1.9
 
-FROM ubuntu:12.04
+FROM ubuntu:14.04
 MAINTAINER AooJ <aoj@n13.cz>
 
 ENV DEBIAN_FRONTEND noninteractive

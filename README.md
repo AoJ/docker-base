@@ -78,6 +78,7 @@ see example in https://github.com/AoJ/docker-redis
 
 
 ## Changelog
+- 1.9 update to ubuntu 14.04
 - 1.8 update && join docker layers
 - 1.7 refactor install scripts
 - 1.6 stdout from install scripts send to dockers logs
