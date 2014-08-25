@@ -78,13 +78,15 @@ see example in https://github.com/AoJ/docker-redis
 
 
 ## Changelog
-- 1.9 update to ubuntu 14.04
-- 1.8 update && join docker layers
-- 1.7 refactor install scripts
-- 1.6 stdout from install scripts send to dockers logs
-- 1.5 remove my public key in ssh
-- 1.4 remove make, gcc
-- 1.3 supervisor listen to SIG*
-- 1.2 remove gists dependencies
-- 1.1 minor fixies
-- 1.0 first realese
+- 1.11 fix supervisord configs
+- 1.10 update & fix missing apt repository
+- 1.9  update to ubuntu 14.04
+- 1.8  update && join docker layers
+- 1.7  refactor install scripts
+- 1.6  stdout from install scripts send to dockers logs
+- 1.5  remove my public key in ssh
+- 1.4  remove make, gcc
+- 1.3  supervisor listen to SIG*
+- 1.2  remove gists dependencies
+- 1.1  minor fixies
+- 1.0  first realese

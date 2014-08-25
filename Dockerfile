@@ -21,13 +21,14 @@ RUN /tmp/install/prepare.sh
 RUN rm /tmp/install -rf
 
 # supervisor
-ADD files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+ADD files/supervisord.conf /etc/supervisor/supervisord.conf
 
 # screen
 ADD files/screenrc /root/.screenrc
 
 # start & install
-ADD files/ /opt/
+ADD files/start.sh /opt/start.sh
+ADD files/install.sh /opt/install.sh
 RUN mkdir -p /opt/run
 RUN chmod +x /opt/install.sh
 RUN chmod +x /opt/start.sh
