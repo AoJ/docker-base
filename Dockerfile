@@ -1,6 +1,6 @@
 # Docker base image
 #
-# VERSION 1.9
+# VERSION 1.10
 
 FROM ubuntu:14.04
 MAINTAINER AooJ <aoj@n13.cz>

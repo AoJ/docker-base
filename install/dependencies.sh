@@ -14,7 +14,7 @@ echo "initscripts hold" | dpkg --set-selections
 apt-get upgrade -y --no-install-recommends
 
 # install packages
-apt-get install -y --no-install-recommends apt-transport-https
+apt-get install -y --no-install-recommends apt-transport-https software-properties-common
 apt-get install -y --no-install-recommends net-tools nano wget curl openssh-server python-software-properties
 apt-get install -y --no-install-recommends supervisor screen
 apt-get clean
