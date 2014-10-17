@@ -78,7 +78,7 @@ see example in https://github.com/AoJ/docker-redis
 
 
 ## Changelog
-- 1.11 fix supervisord configs
+- 1.11 fix supervisord configs 
 - 1.10 update & fix missing apt repository
 - 1.9  update to ubuntu 14.04
 - 1.8  update && join docker layers
