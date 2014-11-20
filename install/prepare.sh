@@ -13,3 +13,5 @@ mkdir -p /root/.ssh
 touch root/.ssh/authorized_keys
 chown root:root root/.ssh/authorized_keys
 dpkg-reconfigure openssh-server
+
+mkdir -p /etc/supervisor/conf.d

@@ -78,6 +78,7 @@ see example in https://github.com/AoJ/docker-redis
 
 
 ## Changelog
+- 1.12 upgrade supervisor to 3.x, disable ssh
 - 1.11 fix supervisord configs 
 - 1.10 update & fix missing apt repository
 - 1.9  update to ubuntu 14.04

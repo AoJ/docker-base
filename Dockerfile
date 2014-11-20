@@ -8,6 +8,7 @@ MAINTAINER AooJ <aoj@n13.cz>
 ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL C
 ENV HOME /root
+ENV CONFD_VERSION 0.6.3
 
 
 # enable universe
@@ -21,7 +22,7 @@ RUN /tmp/install/prepare.sh
 RUN rm /tmp/install -rf
 
 # supervisor
-ADD files/supervisord.conf /etc/supervisor/supervisord.conf
+ADD files/supervisord.conf /etc/supervisord.conf
 
 # screen
 ADD files/screenrc /root/.screenrc

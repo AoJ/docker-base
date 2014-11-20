@@ -1,6 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 
 /opt/install.sh
 
-/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+supervisord -c /etc/supervisord.conf
