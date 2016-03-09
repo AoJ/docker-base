@@ -12,5 +12,5 @@ RUN apk add --no-cache --update                                           \
     && chmod +x /run/start.sh                                             \
     && rm -rf /var/cache/apk/*
 
-CMD sh
+CMD ["/bin/sh"]
 ENTRYPOINT ["/usr/bin/tini", "-g", "--", "/run/start.sh"]
