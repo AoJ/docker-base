@@ -9,9 +9,8 @@ RUN apk add --no-cache --update                                           \
     --repository http://dl-4.alpinelinux.org/alpine/edge/community/ tini  \
     && echo '#!/usr/bin/env sh' > /run/start.sh                           \
     && echo 'exec $@' >> /run/start.sh                                    \
-    && chmod +x /run/start.sh
-
-# rm -rf /var/cache/apk/* /tmp/* /var/tmp/*
+    && chmod +x /run/start.sh                                             \
+    && rm -rf /var/cache/apk/*
 
 CMD sh
 ENTRYPOINT ["/usr/bin/tini", "-g", "--", "/run/start.sh"]
