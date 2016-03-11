@@ -1,6 +1,7 @@
 FROM alpine:3.3
 MAINTAINER AooJ <aooj@n13.cz>
 
+RUN apk --update --no-cache upgrade
 # better init system. Yes, it's necessary 
 # correct forward signals (INT, TERM, HUP and job control)
 # and check for zombie process and re-attach it to itself
