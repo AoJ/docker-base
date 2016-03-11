@@ -5,8 +5,9 @@ MAINTAINER AooJ <aooj@n13.cz>
 # correct forward signals (INT, TERM, HUP and job control)
 # and check for zombie process and re-attach it to itself
 # I don't like zooooooombie procceses!
-RUN apk update && apk upgrade && apk add                                  \
+RUN apk --update add                                                      \
     --repository http://dl-4.alpinelinux.org/alpine/edge/community/ tini  \
+    && apk upgrade                                                        \
     && apk -vv info                                                       \
     && echo '#!/usr/bin/env sh' > /run/start.sh                           \
     && echo 'exec $@' >> /run/start.sh                                    \
